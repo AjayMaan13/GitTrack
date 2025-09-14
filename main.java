@@ -1,3 +1,4 @@
+import java.net.http.HttpClient;
 import java.util.Scanner;
 
 public class main {
@@ -6,5 +7,13 @@ public class main {
         System.out.print("Enter a Github Username: ");
         String gid = sc.nextLine();
         System.out.println("Github Username: " + gid);
+
+        try {
+            String response = GitHubFetcher.getRequest(gid);
+            System.out.println("Github Response: " + response);
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

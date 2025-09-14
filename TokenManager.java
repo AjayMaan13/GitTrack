@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class TokenManager {
-    public String getGitHubToken() {
+    public static String getGitHubToken() {
         String token = System.getenv("GITHUB_TOKEN");
         if (token != null && !token.isEmpty()) {
             return token;

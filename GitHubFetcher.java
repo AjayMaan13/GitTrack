@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.net.http.HttpClient;
 import java.net.URI;
 import java.net.http.HttpRequest;
@@ -5,7 +6,7 @@ import java.net.http.HttpResponse;
 
 
 public class GitHubFetcher {
-    public String getRequest(String username) {
+    public static String getRequest(String username) throws IOException, InterruptedException {
 
         HttpClient client = HttpClient.newHttpClient();
 
@@ -28,5 +29,6 @@ public class GitHubFetcher {
         System.out.println("Status: " + response.statusCode());
         System.out.println("Body: " + response.body());
 
+        return response.body();
     }
 }
