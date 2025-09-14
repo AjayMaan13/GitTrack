@@ -1,4 +1,3 @@
-import java.net.http.HttpClient;
 import java.util.Scanner;
 
 public class main {
@@ -13,7 +12,7 @@ public class main {
             System.out.println("Github Response: " + response);
         }
         catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 }
